@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -ap1 |sed -e 's/\n/, /g' -e 's/,$/\n/'
+ls -p -a | awk '{printf "%s, ",$0} END {print ""}' | sed 's/,[[:space:]]$/,/'
